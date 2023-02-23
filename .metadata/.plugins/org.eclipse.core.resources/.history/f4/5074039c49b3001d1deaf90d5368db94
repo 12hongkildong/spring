@@ -1,0 +1,22 @@
+package kr.co.rland.web.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+
+public class fkfkdk {
+
+	@RequestMapping("/hello")     // 어노테이션)
+	public String asds() {
+		return "Hello Boot";
+	}
+	
+	@RequestMapping("/aaa") 
+	public String abb() {
+		return "신기방기"
+	}
+	
+	
+}

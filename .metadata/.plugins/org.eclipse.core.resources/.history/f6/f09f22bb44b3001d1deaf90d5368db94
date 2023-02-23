@@ -1,0 +1,10 @@
+package kr.co.rland.web.controller;
+
+public class IndexController {
+	
+	
+	
+	public String asd() {
+		return "Hello Boot";
+	}
+}
