@@ -15,6 +15,19 @@
 				<div>
 					<label>제목 : </label>
 					<input type="text" name="title">
+					
+				</div>
+				<div>
+					<input type="submit" value="등록">
+				</div>				
+			</fieldset>
+		</form>
+		<form action="/upload" method="post" enctype="multipart/form-data">
+			<fieldset>
+				<legend>파일 입력 필드</legend>
+				<div>
+					<label>이미지 : </label>
+					<input type="file" name="img">
 				</div>
 				<div>
 					<input type="submit" value="등록">
