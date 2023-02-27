@@ -1,0 +1,10 @@
+package kr.co.rland.web.repository;
+
+public interface MenuRepository {
+	
+	
+	
+	
+	
+	
+}

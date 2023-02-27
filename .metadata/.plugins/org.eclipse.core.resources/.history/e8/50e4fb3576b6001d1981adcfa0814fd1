@@ -1,0 +1,27 @@
+package kr.co.rland.web.entity;
+
+import java.util.Date;
+
+public class Menu {
+	private long id;
+	private String name;
+	private int privce;
+	private Date regDate; // 타입은 반드시 util로 sql아니다.
+	private int categoryId;
+	private long regMemberId;
+	
+	
+	public Menu(long id, String name, int privce, Date regDate, int categoryId, long regMemberId) {
+		this.id = id;
+		this.name = name;
+		this.privce = privce;
+		this.regDate = regDate;
+		this.categoryId = categoryId;
+		this.regMemberId = regMemberId;
+	}
+	
+	
+	
+	
+	
+}

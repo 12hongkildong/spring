@@ -1,0 +1,22 @@
+package kr.co.rland.web;
+
+import java.util.List;
+
+
+
+@SpringBootTest
+class Rlandboot3ApplicationTests {
+
+	@Test
+	void contextLoads() {
+		MenuRepository repository = new JdbcMenuRepository();
+		//if(repository.findAll() == null);
+		
+		List<Menu> list = repository.findAll();
+		
+		System.out.println(list.size());
+		
+		
+	}
+
+}

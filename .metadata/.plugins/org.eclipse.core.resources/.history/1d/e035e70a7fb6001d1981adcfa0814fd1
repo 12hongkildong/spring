@@ -1,0 +1,28 @@
+package kr.co.rland.web;
+
+
+import org.junit.jupiter.api.Test;
+
+import java.util.List;
+
+
+import kr.co.rland.web.entity.Menu;
+import kr.co.rland.web.repository.MenuRepository;
+import kr.co.rland.web.repository.jdbc.JdbcMenuRepository;
+
+
+class Rlandboot3ApplicationTests {
+
+	@Test
+	void contextLoads() {
+		MenuRepository repository = new JdbcMenuRepository();
+		//if(repository.findAll() == null);
+		
+		List<Menu> list = repository.findAll();
+		
+		System.out.println(list.size());
+		
+		
+	}
+
+}
