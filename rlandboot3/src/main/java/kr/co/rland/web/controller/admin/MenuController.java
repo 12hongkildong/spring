@@ -4,6 +4,7 @@ package kr.co.rland.web.controller.admin;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,11 +16,31 @@ import org.springframework.web.bind.annotation.RestController;
 
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
+import kr.co.rland.web.repository.MenuRepository;
 
-
+//@Component("adminMenuController")
 @Controller("adminMenuController")
+//@Controller("adminMenuController")
 @RequestMapping("/admin/menu")
 public class MenuController {
+
+	private MenuRepository menuRepository;
+	
+	public MenuController() {
+		
+	}
+	
+	public MenuController(MenuRepository menuRepository) {
+		this.menuRepository = menuRepository;
+	}
+
+
+	@Autowired 
+	public void setMneuRepository(MenuRepository menuRepository) {
+		this.menuRepository = menuRepository;
+	}
+
+
 
 	@GetMapping("list")
 	public String list(@RequestParam(name="p", defaultValue = "1") int page, 
@@ -39,9 +60,9 @@ public class MenuController {
 		
 		System.out.println(language);
 		myCookie = URLDecoder.decode(myCookie, "utf-8");
-		//System.out.println(myCookie);
+//		System.out.println(myCookie);
 		
-		
+		System.out.println(menuRepository.findAll());
 		
 		System.out.printf("page: %d, query: %s\n", page, query);
 		return "/WEB-INF/view/admin/menu/list.jsp";
