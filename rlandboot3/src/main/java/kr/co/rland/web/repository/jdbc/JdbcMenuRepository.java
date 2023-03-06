@@ -5,20 +5,22 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.datasource.SimpleDriverDataSource;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
-import com.zaxxer.hikari.HikariDataSource;
 
 import kr.co.rland.web.entity.Menu;
 import kr.co.rland.web.repository.MenuRepository;
 
-@Component
+//@Repository
 public class JdbcMenuRepository implements MenuRepository{
 
+	@Autowired
+	private DataSource dataSource;
+	
 	@Override
 	public List<Menu> findAll() {
 		
@@ -28,13 +30,13 @@ public class JdbcMenuRepository implements MenuRepository{
 		//기본 데이터소스객체는 못 찾고, 히카리를 씨기로 함
 		//데이터 소스
 		
-		DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
-        dataSourceBuilder.driverClassName("org.mariadb.jdbc.Driver"); // 사용자 계정
-        dataSourceBuilder.url("jdbc:mariadb://db.newlecture.com:3306/rlanddb");
-        dataSourceBuilder.username("rland"); // 이 부분을 고쳐 쓰면 도니다.
-        dataSourceBuilder.password("20220823");
+//		DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
+//        dataSourceBuilder.driverClassName("org.mariadb.jdbc.Driver"); // 사용자 계정
+//        dataSourceBuilder.url("jdbc:mariadb://db.newlecture.com:3306/rlanddb");
+//        dataSourceBuilder.username("rland"); // 이 부분을 고쳐 쓰면 도니다.
+//        dataSourceBuilder.password("20220823");
 		
-        DataSource dataSource = dataSourceBuilder.build();
+//        DataSource dataSource = dataSourceBuilder.build();
 		
 		JdbcTemplate template = new JdbcTemplate(dataSource); // 템플릿 라이브러리
 		
@@ -44,6 +46,30 @@ public class JdbcMenuRepository implements MenuRepository{
 		
 		
 		return list;
+	}
+
+	@Override
+	public Menu FindById(long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Menu insert(Menu menu) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Menu update(Menu menu) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void delete(long id) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	

@@ -1,8 +1,0 @@
-package kr.co.rland.web.repository.jdbc;
-
-import kr.co.rland.web.repository.MenuRepository;
-
-public class jdbcMenuRepository implements MenuRepository{
-	
-
-}

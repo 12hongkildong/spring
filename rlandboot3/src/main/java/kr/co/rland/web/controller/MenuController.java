@@ -1,5 +1,6 @@
 package kr.co.rland.web.controller;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -9,14 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/menu")
 public class MenuController {
 
-	
-	
-	@RequestMapping("list") 
+	@GetMapping("list") 
 	public String list() {
 		return "menu list";
 	}
 
-	@RequestMapping("detail") 
+	@GetMapping("detail") 
 	public String detail() {
 		return "menu detail";
 	}

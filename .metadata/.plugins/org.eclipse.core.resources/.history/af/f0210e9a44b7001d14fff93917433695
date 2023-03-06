@@ -1,5 +1,0 @@
-package kr.co.rland.web.service;
-
-public interface MenuService {
-
-}

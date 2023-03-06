@@ -29,7 +29,6 @@ public class HomeController {
 	@ResponseBody
 	public String upload(MultipartFile[] imgs, HttpServletRequest request) throws IllegalStateException, IOException {
 		
-		
 		for(int i=0 ; i<imgs.length ; i++){
 			
 			MultipartFile img = imgs[i];
