@@ -15,7 +15,7 @@ public class MbMenurepository implements MenuRepository{
 	}
 
 	@Override
-	public Menu FindById(long id) {
+	public Menu findById(long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
