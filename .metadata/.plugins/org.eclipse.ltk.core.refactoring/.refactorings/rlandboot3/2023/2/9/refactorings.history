@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;rlandboot3/src/main/resources/static/img&apos; to &apos;image&apos;" description="Rename resource &apos;img&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/resources/static/img" name="image" stamp="1677477179984" updateReferences="true"/>
-</session>

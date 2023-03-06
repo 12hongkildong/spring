@@ -5,7 +5,8 @@ import java.util.Date;
 public class Menu {
 	private long id;
 	private String name;
-	private int privce;
+	private int price;
+	@Column("reg_date")
 	private Date regDate; // 타입은 반드시 util로 sql아니다.
 	private int categoryId;
 	private long regMemberId;
@@ -14,19 +15,19 @@ public class Menu {
 		
 	}
 	
-	public Menu(long id, String name, int privce, Date regDate, int categoryId, long regMemberId) {
+	public Menu(long id, String name, int price, Date regDate, int categoryId, long regMemberId) {
 		this.id = id;
 		this.name = name;
-		this.privce = privce;
+		this.price = price;
 		this.regDate = regDate;
 		this.categoryId = categoryId;
 		this.regMemberId = regMemberId;
 	}
 
-	public Menu(String name, int privce, int categoryId) {
+	public Menu(String name, int price, int categoryId) {
 		super();
 		this.name = name;
-		this.privce = privce;
+		this.price = price;
 		this.categoryId = categoryId;
 	}
 
@@ -50,13 +51,13 @@ public class Menu {
 	}
 
 
-	public int getPrivce() {
-		return privce;
+	public int getPrice() {
+		return price;
 	}
 
 
-	public void setPrivce(int privce) {
-		this.privce = privce;
+	public void setPrice(int price) {
+		this.price = price;
 	}
 
 
@@ -92,7 +93,7 @@ public class Menu {
 
 	@Override
 	public String toString() {
-		return "Menu [id=" + id + ", name=" + name + ", privce=" + privce + ", regDate=" + regDate + ", categoryId="
+		return "Menu [id=" + id + ", name=" + name + ", price=" + price + ", regDate=" + regDate + ", categoryId="
 				+ categoryId + ", regMemberId=" + regMemberId + "]";
 	}
 	

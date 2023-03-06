@@ -19,6 +19,7 @@ class JdbcMenuRepositoryTest {
 		List<Menu> list = repository.findAll();
 		
 		System.out.println(list.size());
+		System.out.println("작업종료");
 		
 	}
 
