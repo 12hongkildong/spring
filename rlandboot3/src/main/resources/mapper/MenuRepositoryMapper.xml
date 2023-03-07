@@ -1,17 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.co.rland.web.repository.MenuRepository">
-	<select id="findAll" resultType="kr.co.rland.web.entity.menu">
-		select * fomr menu
+	<select id="findAll" resultType="kr.co.rland.web.entity.Menu">
+		select * 
+		from menu
+		<trim prefix="WHERE" prefixOverrides="AND |OR ">
+			<if test="query != null">
+				name like '%${query}%'
+			</if>
+			<if test="query != null">
+				and price > #{price}
+			</if>
+			<if test="query != null">
+				and categoryId = #{categoryId}
+			</if> 
+		</trim>    
+		order by ${orderField} ${orderDir} 
+		limit #{size} offset #{offset}
+		
 	</select>
-	<select id="findById" resultType="kr.co.rland.web.entity.menu">
+	<select id="findById" resultType="kr.co.rland.web.entity.Menu">
 		select *
 		from menu
 		where id=#{id}
 	</select>
-	<insert id=""></insert>
-	<update id=""></update>
-	<delete id=""></delete>
+	<insert id="insert"></insert>
+	<update id="update" parameterType="kr.co.rland.web.entity.Menu">
+		update menu 
+		<trim prefix="SET" suffixOverrides=",">
+			<if test="name != null">name=#{name},</if>
+			<if test="price != null">price=#{price},</if>
+			<if test="img != null">img=#{img}</if>
+		</trim>
+		where id = #{id};
+	</update>
+	<delete id="delete"></delete>
 </mapper>

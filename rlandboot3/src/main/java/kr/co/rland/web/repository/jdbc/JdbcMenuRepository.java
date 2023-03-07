@@ -49,7 +49,7 @@ public class JdbcMenuRepository implements MenuRepository{
 	}
 
 	@Override
-	public Menu FindById(long id) {
+	public Menu findById(long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -70,6 +70,13 @@ public class JdbcMenuRepository implements MenuRepository{
 	public void delete(long id) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public List<Menu> findAll(Integer offset, Integer size, String query, Integer category, Integer price,
+			String orderFieId, String orderDir) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	
