@@ -27,7 +27,7 @@ public class HomeController {
 
 	@PostMapping("upload") // 파일 올릴려고 하는 사람이니까 get이; 아니라 post
 	@ResponseBody
-	public String upload(MultipartFile[] imgs, HttpServletRequest reqiest) throws IllegalStateException, IOException {
+	public String upload(MultipartFile[] imgs, HttpServletRequest request) throws IllegalStateException, IOException {
 		
 		
 		for(int i=0 ; i<imgs.length ; i++){
@@ -38,7 +38,7 @@ public class HomeController {
 				continue;
 			
 			String urlPath="/image/menu/"+img.getOriginalFilename();
-			String realPath = reqiest.getServletContext().getRealPath(urlPath);//this.getClass().getResource("")// 물리경로, 리소스 경로를 알아내기
+			String realPath = request.getServletContext().getRealPath(urlPath);//this.getClass().getResource("")// 물리경로, 리소스 경로를 알아내기
 			
 	//		InputStream fis = img.getInputStream(); // img나 request에서 얻어올 수 있따.
 	//		OutputStream fos = new FileOutputStream(realPath);

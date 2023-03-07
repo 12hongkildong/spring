@@ -1,0 +1,5 @@
+package kr.co.rland.web.repository.mybatis;
+
+public class MBMenurepository {
+
+}
