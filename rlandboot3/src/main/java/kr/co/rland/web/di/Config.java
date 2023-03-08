@@ -16,7 +16,7 @@ import kr.co.rland.web.repository.jdbc.JdbcMenuRepository;
 //	@Configuration
 //		@Bean
 // 사실상
-@Configuration
+//@Configuration
 public class Config {
 	@Bean
 	public JdbcMenuRepository repository() {
