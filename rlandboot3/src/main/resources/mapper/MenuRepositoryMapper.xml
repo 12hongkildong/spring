@@ -6,6 +6,9 @@
 	<resultMap id="menuResultMap" type="Menu">
 	  <id property="id" column="user_id" />
 	  <result property="regDate" column="reg_date"/>
+	  <result property="categoryId" column="category_id"/>
+	  <result property="regMemberId" column="reg_member_id"/>
+	  
 	</resultMap>
 
 	<select id="findAll" resultMap="menuResultMap">
@@ -21,8 +24,12 @@
 				and categoryId = #{categoryId}
 			</if>
 		</trim>
-		order by ${orderField} ${orderDir}
-		limit #{size} offset #{offset}
+		<if test="orderField != null">
+			order by ${orderField} ${orderDir}
+		</if>
+		<if test="size != null">
+			limit #{size} offset #{offset}
+		</if>
 			
 	</select>
 	
@@ -42,9 +49,25 @@
 		from menu
 		where id=#{id}
 	</select>
-	<insert id="insert"></insert>
-	
-	
+	<select id="count" resultType="Integer">
+		select count(id) count
+		from menu
+		<trim prefix="WHERE" prefixOverrides="AND |OR ">
+			<if test="query != null">
+				name like '%${query}%'  
+			</if>
+			<if test="price != null">
+				and price > #{price}
+			</if>
+			<if test="categoryId != null">
+				and categoryId = #{categoryId}
+			</if>
+		</trim>
+	</select>
+	<insert id="insert" parameterType="Menu">
+		insert into menu(name, price, img, category_id, reg_member_id) 
+		values(#{name},#{price},#{img},#{categoryId},#{regMemberId})	
+	</insert>
 	<update id="update" parameterType="Menu">
 		
 		update menu
@@ -61,6 +84,8 @@
 		</trim>
 		where id = #{id};
 	</update>
-	<delete id="delete"></delete>
+	<delete id="delete">
+		delete from menu where id=${id}
+	</delete>
 </mapper>
 

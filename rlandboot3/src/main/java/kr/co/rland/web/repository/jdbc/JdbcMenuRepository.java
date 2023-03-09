@@ -71,6 +71,25 @@ public class JdbcMenuRepository implements MenuRepository{
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public List<Menu> findAll(Integer offset, Integer size) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Menu> findAll(Integer offset, Integer size, String query, Integer categoryId, Integer price,
+			String orderField, String orderDir) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Menu> findAllByIds(List<Long> ids) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 //   @Override
