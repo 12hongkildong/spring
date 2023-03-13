@@ -7,8 +7,16 @@
     <fullyQualifiedTypeName name="org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="kr.co.rland.web.entity.Menu"/>
-    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
     <fullyQualifiedTypeName name="org.mybatis.spring.boot.test.autoconfigure.AutoConfigureMybatis"/>
-    <fullyQualifiedTypeName name="org.springframework.boot.test.context.SpringBootTest"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
+    <fullyQualifiedTypeName name="kr.co.rland.web.repository.MenuRepository"/>
+    <fullyQualifiedTypeName name="kr.co.rland.web.service.MenuService"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="org.springframework.boot.test.context.SpringBootTest"/>
+    <fullyQualifiedTypeName name="kr.co.rland.web.aop.DefaultCaluclator"/>
+    <fullyQualifiedTypeName name="org.springframework.cglib.proxy.InvocationHandler"/>
+    <fullyQualifiedTypeName name="java.lang.reflect.Proxy"/>
+    <fullyQualifiedTypeName name="kr.co.rland.web.aop.DefaultCalculator"/>
+    <fullyQualifiedTypeName name="kr.co.rland.web.aop.Calculator"/>
+    <fullyQualifiedTypeName name="java.lang.reflect.InvocationHandler"/>
 </qualifiedTypeNameHistroy>

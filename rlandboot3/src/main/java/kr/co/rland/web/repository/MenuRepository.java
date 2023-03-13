@@ -23,8 +23,8 @@ public interface MenuRepository {
 		   	String query,
 			Integer categoryId,
 			Integer price);
-   Menu insert(Menu menu);
-   Menu update(Menu menu);
+   int insert(Menu menu);
+   int update(Menu menu);
    void delete(long id);
    
 }

@@ -6,4 +6,7 @@ import kr.co.rland.web.entity.Menu;
 
 public interface MenuService {
 	List<Menu> getList();
+	void pointUp();
+	
+	
 }

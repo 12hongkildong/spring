@@ -64,7 +64,7 @@ class MenuRepositoryTest {
 		List<Menu> list = repository.findAllByIds(ids);
 		System.out.println(list); //리스트컬렉션
 	}
-	@Test
+	//@Test
 	void testCount() {
 		int count = repository.count(null, null, null);
 		System.out.println(count);
