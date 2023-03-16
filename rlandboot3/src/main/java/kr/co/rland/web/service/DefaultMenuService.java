@@ -27,7 +27,7 @@ public class DefaultMenuService implements MenuService {
 //		return repository.findAll(0,10,"",null,null,"regDate","desc");
 	}
 
-	@Transactional
+	//@Transactional(propagation = )
 	@Override
 	public void pointUp() {
 		Menu menu = new Menu();
@@ -35,9 +35,19 @@ public class DefaultMenuService implements MenuService {
 		menu.setPrice(5000);
 		repository.update(menu);
 		
-		menu.setId(915L);
-		menu.setPrice(5000000);
-		repository.update(menu);	
+//		menu.setId(915L);
+//		menu.setPrice(5000000);
+//		repository.update(menu);	
+		
+		menu.setName("러시러시러시아노");
+		menu.setRegDate(null);
+		//menu.set
+			
+		repository.insert(menu);
+		
+//		repository.updateByIds({1,3,6,7},1);
+//		repository.update(new Menu());
+//		repository.insert(?);
 	}
 
 

@@ -3,6 +3,8 @@ package kr.co.rland.web.repository;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import kr.co.rland.web.entity.Menu;
 
@@ -24,6 +26,7 @@ public interface MenuRepository {
 			Integer categoryId,
 			Integer price);
    int insert(Menu menu);
+//   @Transactional(l = Propagation.NEVER)
    int update(Menu menu);
    void delete(long id);
    
