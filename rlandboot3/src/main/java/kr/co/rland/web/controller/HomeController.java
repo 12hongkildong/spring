@@ -75,7 +75,7 @@ public class HomeController {
 		
 		model.addAttribute("data", data);
 		
-		return "/WEB-INF/view/index.jsp";
+		return "index";
 		
 	
 	}
