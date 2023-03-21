@@ -5,12 +5,13 @@
 	layout:decorate="inc/layout">
 
     <!-- ---------------------------------------------------------------------- -->   
-	<main>
+	<main layout:fragment="main">
 		<section>
 			<header class="search-header">
 				<h1 class="text-title1-h1" th:text="${data}">알랜드 메뉴</h1>
-				<form>
-					<input type="text">
+				<form action="list" method="get">
+					<input type="hidden" name="c" th:value="${param.c}">
+					<input type="text" name="q" th:value="${param.q}">
 					<input type="submit" class="icon icon-find">
 				</form>
 			</header>
@@ -30,22 +31,15 @@
 					<h1 class="text-normal-bold">메뉴분류</h1>
 				</div>
 				<ul>
-					<li class="menu-selected">
-						<a href="/menu/list">전체</a>
+					<li class="" th:class="${param.c}==null? 'menu-selected'">
+						<a href="list">전체</a>
 					</li>
-					<li>
-						<a href="">커피음료</a>
+					
+					<li th:each="c : ${category}"
+						th:class="${#strings.equals(param.c, c.id)}? 'menu-selected'">
+						<a th:class="(${param.c}==${c.id})? 'menu-selected'" href="?c=1" th:href="@{list(c=${c.id})}" th:text="${c.name}">커피음료</a>
 					</li>
-					<li>
-						<a href="">수제청</a>
-					</li>
-					<li>
-						<a href="">샌드위치</a>
-					</li>
-					<li>
-						<a href="">쿠키</a>
-					</li>
-				</ul>
+				</ul>                 
 			</nav>
 
 			<section class="cart-section">
@@ -57,13 +51,14 @@
 			<section class="menu-section">
 		        <h1 class="d-none">메뉴목록</h1>
 		        <div class="menu-list">
-		            <section class="menu">
+		            <section class="menu"  th:each="menu : ${list}">
 		                <form class="">
-		                    <h1>알랜드 커피</h1> 
+		                    <h1><span th:text="${menu.name}">알랜드커피</span><span style="font-size:11px;" th:text="${menu.categoryName}"> /커피메뉴</span></h1> 
 		                    <div class="menu-img-box">
-		                        <a href="detail.html"><img class="menu-img" src="/image/product/12.png"></a>
+		                        <a href="detail" th:href="@{detail(id=${menu.id})}"><img class="menu-img" th:src="@{/image/menu/{img}(img=${menu.img})}" src="/image/product/12.png"></a>
 		                    </div>    
-		                    <div class="menu-price">4500 원</div>
+		                    <div class="menu-price" th:text="${#numbers.formatInteger({menu.price},3,'COMMA')}+' 원'">4500 원</div>
+		                    
 		                    <div class="menu-option-list">
 		                        <span class="menu-option">
 		                            <input class="menu-option-input" type="checkbox">
@@ -80,80 +75,10 @@
 		                    </div>
 		                </form>
 		            </section>
-		            <section class="menu">
-		                <form class="">
-		                    <h1>알랜드 커피</h1> 
-		                    <div class="menu-img-box">
-		                        <img class="menu-img" src="/image/product/12.png">
-		                    </div>    
-		                    <div class="menu-price">4500 원</div>
-		                    <div class="menu-option-list">
-		                        <span class="menu-option">
-		                            <input class="menu-option-input" type="checkbox">
-		                            <label>ICED</label>
-		                        </span>            
-		                        <span class="menu-option ml-2">
-		                            <input class="menu-option-input" type="checkbox">
-		                            <label>Large</label>
-		                        </span>
-		                    </div>
-		                    <div class="menu-button-list">
-		                        <input class="btn btn-fill btn-size-1 btn-size-1-lg" type="submit" value="담기">
-		                        <input class="btn btn-line btn-size-1 btn-size-1-lg ml-1" type="submit" value="주문하기">
-		                    </div>
-		                </form>
-		            </section>
-		            <section class="menu">
-		                <form class="">
-		                    <h1>알랜드 커피</h1> 
-		                    <div class="menu-img-box">
-		                        <img class="menu-img" src="/image/product/12.png">
-		                    </div>    
-		                    <div class="menu-price">4500 원</div>
-		                    <div class="menu-option-list">
-		                        <span class="menu-option">
-		                            <input class="menu-option-input" type="checkbox">
-		                            <label>ICED</label>
-		                        </span>            
-		                        <span class="menu-option ml-2">
-		                            <input class="menu-option-input" type="checkbox">
-		                            <label>Large</label>
-		                        </span>
-		                    </div>
-		                    <div class="menu-button-list">
-		                        <input class="btn btn-fill btn-size-1 btn-size-1-lg" type="submit" value="담기">
-		                        <input class="btn btn-line btn-size-1 btn-size-1-lg ml-1" type="submit" value="주문하기">
-		                    </div>
-		                </form>
-		            </section>
-		            <section class="menu">
-		                <form class="">
-		                    <h1>알랜드 커피</h1> 
-		                    <div class="menu-img-box">
-		                        <img class="menu-img" src="/image/product/12.png">
-		                    </div>    
-		                    <div class="menu-price">4500 원</div>
-		                    <div class="menu-option-list">
-		                        <span class="menu-option">
-		                            <input class="menu-option-input" type="checkbox">
-		                            <label>ICED</label>
-		                        </span>            
-		                        <span class="menu-option ml-2">
-		                            <input class="menu-option-input" type="checkbox">
-		                            <label>Large</label>
-		                        </span>
-		                    </div>
-		                    <div class="menu-button-list">
-		                        <input class="btn btn-fill btn-size-1 btn-size-1-lg" type="submit" value="담기">
-		                        <input class="btn btn-line btn-size-1 btn-size-1-lg ml-1" type="submit" value="주문하기">
-		                    </div>
-		                </form>
-		            </section>
-		        </div>
 		    </section>
 
 			<div class="d-flex justify-content-center py-3">
-				<a href="" class="btn btn-round w-100 w-50-md py-2">더보기(13+)</a>
+				<a href="" class="btn btn-round w-100 w-50-md py-2" style="color:black;">더보기(13+)</a>
 			</div>
 
 			<section class="new-menu menu-section-p">

@@ -11,6 +11,7 @@ public class Menu {
 	private Date regDate; // 타입은 반드시 util로 sql아니다.
 	private Integer categoryId;
 	private long regMemberId;
+	private String description;
 
 	public Menu(){
 		
@@ -89,6 +90,14 @@ public class Menu {
 
 	public void setRegMemberId(long regMemberId) {
 		this.regMemberId = regMemberId;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	@Override
