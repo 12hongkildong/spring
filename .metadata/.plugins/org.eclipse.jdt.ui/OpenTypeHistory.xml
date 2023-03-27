@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
     <typeInfo handle="=rlandboot3/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;kr.co.rland.web.aop{Calculator.java[Calculator" modifiers="513" timestamp="1678695212000"/>
-    <typeInfo handle="=rlandboot3/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;kr.co.rland.web.service{CategoryService.java[CategoryService" modifiers="513" timestamp="1679377603601"/>
+    <typeInfo handle="=rlandboot3/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;kr.co.rland.web.service{CategoryService.java[CategoryService" modifiers="513" timestamp="1679552524823"/>
+    <typeInfo handle="=rlandboot3/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;kr.co.rland.web.service{RcmdMenuService.java[RcmdMenuService" modifiers="513" timestamp="1679473903298"/>
 </typeInfoHistroy>
